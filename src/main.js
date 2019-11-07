@@ -2,6 +2,13 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9b1aa9da1bbb86aab4c3a57a23f2d36788e70672
+>>>>>>> e0b0a6ea6b262e4679d8db7f48a4178a9ed4d31c
 // 引入vant
 import Vant from 'vant';
 import 'vant/lib/index.css';
@@ -17,6 +24,7 @@ Vue.use(VueAwesomeSwiper, /* { default global options } */)
 Vue.use(ElementUI);
 Vue.use(Vant);
 Vue.use(directives)
+<<<<<<< HEAD
 // 图片懒加载组件
 import { Lazyload } from 'vant';
 
@@ -49,6 +57,18 @@ router.beforeEach((to, from, next) => {
     }
   }
 })
+=======
+<<<<<<< HEAD
+//引入axios
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+Vue.use(VueAxios, axios)
+=======
+
+>>>>>>> 9b1aa9da1bbb86aab4c3a57a23f2d36788e70672
+
+>>>>>>> e0b0a6ea6b262e4679d8db7f48a4178a9ed4d31c
 
 Vue.config.productionTip = false
 

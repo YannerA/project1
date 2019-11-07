@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
     <div v-height="610">
         <router-view v-if="$route.path === '/'" />
         <div v-if="$route.path !== '/'">
@@ -24,10 +25,16 @@
         </div>
         <router-view v-if="$route.path !=='/' " />
     </div>
+=======
+  <div>
+      头部
+  </div>
+>>>>>>> e0b0a6ea6b262e4679d8db7f48a4178a9ed4d31c
 </template>
 
 <script>
 export default {
+<<<<<<< HEAD
     inject: ["list"],
     data() {
         return {
@@ -190,4 +197,12 @@ export default {
     z-index: 1;
     height: 90px;
 }
+=======
+
+}
+</script>
+
+<style>
+
+>>>>>>> e0b0a6ea6b262e4679d8db7f48a4178a9ed4d31c
 </style>
