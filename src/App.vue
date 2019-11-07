@@ -67,22 +67,32 @@ export default {
 };
 =======
   <div id="app">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     <!-- <login></login> -->
 =======
     <home></home>
 >>>>>>> 9b1aa9da1bbb86aab4c3a57a23f2d36788e70672
     <router-view/>
+=======
+    <!-- <home></home> -->
+     
+      <router-view/> 
+>>>>>>> Stashed changes
   </div>
 </template>
 
 <script>
 // 引入首页组件
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 import login from './views/login/index.vue'
 =======
 import home from './views/home/index.vue'
 >>>>>>> 9b1aa9da1bbb86aab4c3a57a23f2d36788e70672
+=======
+import login from './views/login/index.vue'
+>>>>>>> Stashed changes
 export default {
   data(){
     return{
@@ -90,12 +100,16 @@ export default {
     }
   },
   components:{
+<<<<<<< Updated upstream
 <<<<<<< HEAD
      login,
     
 =======
     home
 >>>>>>> 9b1aa9da1bbb86aab4c3a57a23f2d36788e70672
+=======
+    login
+>>>>>>> Stashed changes
   }
 }
 >>>>>>> e0b0a6ea6b262e4679d8db7f48a4178a9ed4d31c

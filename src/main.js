@@ -20,9 +20,12 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 // 引入自定义事件height
 import directives from './plugins/directives.js'
+
+
 Vue.use(VueAwesomeSwiper, /* { default global options } */)
 Vue.use(ElementUI);
 Vue.use(Vant);
+<<<<<<< Updated upstream
 Vue.use(directives)
 <<<<<<< HEAD
 // 图片懒加载组件
@@ -65,6 +68,10 @@ import VueAxios from 'vue-axios'
 
 Vue.use(VueAxios, axios)
 =======
+=======
+Vue.use(directives);
+
+>>>>>>> Stashed changes
 
 >>>>>>> 9b1aa9da1bbb86aab4c3a57a23f2d36788e70672
 

@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     // 授权登陆是否成功
     authorize: null,
@@ -35,9 +36,51 @@ export default new Vuex.Store({
       }else{
         alert('注册成功');
       }
+=======
+    headerList: [],
+    title:'',
+    jianjie: '',
+    mainImg: [],
+    num: null
+  },
+  mutations: {
+    //所有数据
+    GETALL(state, payload) {
+      state.headerList = payload.headerList 
+      state.mainImg = payload.mainImg
+      state.jianjie = payload.jianjie
+      state.num = state.mainImg.length
+    },
+    //显示隐藏
+    ISSHOW(state, payload) {
+      state.headerList.map((item, index) => {
+        if (index == payload.index) {
+          item.isShow = !item.isShow
+        }
+      })
+      //console.log(payload) //{index: 2, isShow: false}
+    },
+    //搜索
+    ONSEARCH(state, payload) {
+      // console.log(payload)
+      state.mainImg = payload.data[1].mainImg
+      // console.log(state.mainImg)
+      state.num = state.mainImg.length
+      //调用回调函数
+      payload.cb(payload.data[0].search.url)
+    },
+    //点击table
+    TABLE(state, payload) {
+      console.log(payload)
+     state.title=payload.title
+      state.mainImg =  payload.mainImg
+      state.num = state.mainImg.length
+>>>>>>> Stashed changes
     }
   },
+  //异步
   actions: {
+<<<<<<< Updated upstream
     async LOGIN({ commit }, payload) {
       var { token, msg } = await fetch('/login', {
         method: "POST",
@@ -72,6 +115,42 @@ export default new Vuex.Store({
     }
   },
   modules: {
+=======
+    //所有数据
+    async GETALL({ commit }) {
+      var data = await fetch('/getall').then(res => res.json());
+      // console.log(data)
+      commit('GETALL', data)
+    },
+    //异步搜索,使用同步更好
+    async ONSEARCH({ commit }, payload) {
+      // console.log(payload)
+      var data = await fetch('/search', {
+        method: 'POST',
+        headers: {
+          "Content-Type": 'application/json'
+        },
+        body: JSON.stringify({ value: payload.value })
+      }).then(res => res.json());
+      commit('ONSEARCH', {
+        data,
+        cb: payload.cb
+      })
+
+    },
+    //异步table，使用同步更好
+    async TABLE({ commit }, payload) {
+      //console.log(payload)
+      var data = await fetch('/table', {
+        method: 'POST',
+        headers: {
+          "Content-Type": 'application/json'
+        },
+        body: JSON.stringify(payload)
+      }).then(res => res.json());
+      commit('TABLE', data)
+    }
+>>>>>>> Stashed changes
   }
 =======
 <<<<<<< HEAD

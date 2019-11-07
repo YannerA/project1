@@ -1,6 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+import designSketchRouter from './designSketchRouter'
+// https://www.cnblogs.com/lxk0301/p/11671256.html
+// 解决莫名其妙的报错 重写了一个push方法
+const routerPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+    return routerPush.call(this, location).catch(error => error)
+}
+>>>>>>> Stashed changes
 
 =======
 <<<<<<< HEAD
@@ -96,10 +106,11 @@ const routes = [
     component:()=>import('../views/decoration/index.vue')
   },
   // 效果图
+  designSketchRouter,
+  //搜索
   {
-    path:'/designSketch',
-    name:'designSketch',
-    component:()=>import('../views/designSketch/index.vue')
+    path:'/search',
+    component:()=>import('../views/search/index.vue')
   },
   // 设计师
   {
