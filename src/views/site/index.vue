@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="site">
     <div>
       <router-view :maplist="maplist"></router-view>
@@ -35,10 +36,15 @@
       />
     </div>
     <wenzi></wenzi>
+=======
+  <div>
+      装修工地
+>>>>>>> 9b1aa9da1bbb86aab4c3a57a23f2d36788e70672
   </div>
 </template>
 
 <script>
+<<<<<<< HEAD
 import wenzi from "./wenzi";
 export default {
   components: {
@@ -158,4 +164,13 @@ html, body {
     }
   }
 }
+=======
+export default {
+
+}
+</script>
+
+<style>
+
+>>>>>>> 9b1aa9da1bbb86aab4c3a57a23f2d36788e70672
 </style>

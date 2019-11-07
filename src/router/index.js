@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+<<<<<<< HEAD
 import siteRouter from './siteRouter'
 // https://www.cnblogs.com/lxk0301/p/11671256.html
 // 解决莫名其妙的报错 重写了一个push方法
@@ -7,6 +8,9 @@ const routerPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
     return routerPush.call(this, location).catch(error => error)
 }
+=======
+
+>>>>>>> 9b1aa9da1bbb86aab4c3a57a23f2d36788e70672
 Vue.use(VueRouter)
 
 const routes = [
@@ -41,7 +45,15 @@ const routes = [
     component:()=>import('../views/stylist/index.vue')
   },
   // 装修工地
+<<<<<<< HEAD
   siteRouter,
+=======
+  {
+    path:'/site',
+    name:'site',
+    component:()=>import('../views/site/index.vue')
+  },
+>>>>>>> 9b1aa9da1bbb86aab4c3a57a23f2d36788e70672
   // 装修攻略
   {
     path:'/strategy',
@@ -66,6 +78,7 @@ const routes = [
     name:'tenSecondsBid',
     component:()=>import('../views/tenSecondsBid/index.vue')
   },
+<<<<<<< HEAD
    //评论
   {
     path:'/pinglun',
@@ -79,6 +92,13 @@ const routes = [
   //   path:'/*',
   //   redirect:'/index'
   // }
+=======
+  // 重定向
+  {
+    path:'/*',
+    redirect:'/index'
+  }
+>>>>>>> 9b1aa9da1bbb86aab4c3a57a23f2d36788e70672
 ]
 
 const router = new VueRouter({

@@ -2,7 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9b1aa9da1bbb86aab4c3a57a23f2d36788e70672
 // 引入vant
 import Vant from 'vant';
 import 'vant/lib/index.css';
@@ -18,11 +21,15 @@ Vue.use(VueAwesomeSwiper, /* { default global options } */)
 Vue.use(ElementUI);
 Vue.use(Vant);
 Vue.use(directives)
+<<<<<<< HEAD
 //引入axios
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
 Vue.use(VueAxios, axios)
+=======
+
+>>>>>>> 9b1aa9da1bbb86aab4c3a57a23f2d36788e70672
 
 
 Vue.config.productionTip = false

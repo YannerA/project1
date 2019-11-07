@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+<<<<<<< HEAD
     zhibo: [],
   },
   mutations: {
@@ -27,4 +28,13 @@ export default new Vuex.Store({
 
   },
 
+=======
+  },
+  mutations: {
+  },
+  actions: {
+  },
+  modules: {
+  }
+>>>>>>> 9b1aa9da1bbb86aab4c3a57a23f2d36788e70672
 })
