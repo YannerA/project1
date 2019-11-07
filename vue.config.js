@@ -25,6 +25,10 @@ function addStyleResource(rule) {
         path.resolve(__dirname, './src/common/common.styl'),
       ],
     })
+<<<<<<< HEAD
 }
 
 
+=======
+}
+>>>>>>> bd3a62fb6612767420e94226a5208826c864f84f

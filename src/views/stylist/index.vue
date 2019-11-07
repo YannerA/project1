@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
     <div class="box">
         <header id="ding">
 
@@ -293,3 +294,19 @@ export default {
         background #fff;
     }
 </style>
+=======
+  <div>
+      设计师
+  </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style>
+
+</style>
+>>>>>>> bd3a62fb6612767420e94226a5208826c864f84f

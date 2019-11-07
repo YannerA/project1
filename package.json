@@ -7,14 +7,41 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    "axios": "^0.19.0",
+=======
+>>>>>>> 9b1aa9da1bbb86aab4c3a57a23f2d36788e70672
+>>>>>>> e0b0a6ea6b262e4679d8db7f48a4178a9ed4d31c
+>>>>>>> bd3a62fb6612767420e94226a5208826c864f84f
     "core-js": "^3.3.2",
     "element-ui": "^2.12.0",
     "style-resources-loader": "^1.2.1",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
     "vant": "^2.2.10",
+<<<<<<< HEAD
     "vue": "^2.6.10",
     "vue-awesome-swiper": "^3.1.3",
+=======
+<<<<<<< HEAD
+    "vue": "^2.6.10",
+    "vue-awesome-swiper": "^3.1.3",
+=======
+<<<<<<< HEAD
+    "vant-weapp": "^0.5.22",
+    "vue": "^2.6.10",
+    "vue-awesome-swiper": "^3.1.3",
+    "vue-axios": "^2.1.5",
+=======
+    "vue": "^2.6.10",
+    "vue-awesome-swiper": "^3.1.3",
+>>>>>>> 9b1aa9da1bbb86aab4c3a57a23f2d36788e70672
+>>>>>>> e0b0a6ea6b262e4679d8db7f48a4178a9ed4d31c
+>>>>>>> bd3a62fb6612767420e94226a5208826c864f84f
     "vue-router": "^3.1.3",
     "vuex": "^3.0.1"
   },
