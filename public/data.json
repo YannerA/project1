@@ -1,0 +1,21 @@
+{
+    "users": [{
+        "phone":"admin",
+        "pwd": "admin",
+        "userinfo":{
+            "username":"管理员"
+        }
+    },{
+        "phone":"18033870813",
+        "pwd": "000000",
+        "userinfo":{
+            "username":"普通用户1"
+        }
+    },{
+        "phone":"18033870814",
+        "pwd": "111111",
+        "userinfo":{
+            "username":"普通用户2"
+        }
+    }]
+}

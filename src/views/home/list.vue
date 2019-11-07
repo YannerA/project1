@@ -26,20 +26,21 @@ nav {
     text-align: center;
     flex-flow: wrap;
     font-size: rem(14);
+    background: #fff;
 
     figure {
-        flex: 25%;
-        margin: rem(10px) 0;
+        flex: 20%;
+        margin: rem(10px) rem(5);
 
         p.iconfont {
-            width: 70%;
-            height: rem(65);
+            width: 75%;
+            height: rem(60);
             margin: rem(5px) auto;
             border-radius: 50%;
             background: red;
-            line-height: 4.125rem;
+            line-height: rem(60);
             color: #fff;
-            font-size: rem(32px);
+            font-size: rem(30px);
 
             &.icon-case {
                 background: #39c894;

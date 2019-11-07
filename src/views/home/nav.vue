@@ -1,36 +1,39 @@
 <template>
-    <div>
-        <div class="nav">
-            <img :src="src" />
-            <div class="nav-icon">
-                <figure
-                    v-for="(item, index) of nav"
-                    :key="index"
-                    :class="{cur : !isShow}"
-                    @click="tab"
-                >
-                    <p :class="['iconfont',item.icon]"></p>
-                    <figcaption>{{item.title}}</figcaption>
-                </figure>
+    <div v-height="610">
+        <router-view v-if="$route.path === '/'" />
+        <div v-if="$route.path !== '/'">
+            <div class="nav">
+                <img :src="src" @click="user" />
+                <div class="nav-icon">
+                    <button @click="logout" class="iconfont icon-user"></button>
+                    <figure v-for="(item, index) of nav" :key="index" @click="tab">
+                        <p :class="['iconfont',item.icon]"></p>
+                        <figcaption>{{item.title}}</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="navs" v-if="isShow">
+                <span @click="tab" class="cuo">×</span>
+                <nav>
+                    <figure v-for="(item, index) of list" :key="index" @click="tabs(item.url)">
+                        <p class="iconfont" :class="item.icon"></p>
+                        <figcaption>{{item.title}}</figcaption>
+                    </figure>
+                </nav>
             </div>
         </div>
-        <list :class="{cur : isShow}"></list>
+        <router-view v-if="$route.path !=='/' " />
     </div>
 </template>
 
 <script>
-import list from "./list.vue";
-
 export default {
+    inject: ["list"],
     data() {
         return {
-            isShow: true,
-            src: "/img/logo.png",
+            isShow: false,
+            src: "/img/lunbo/logo.png",
             nav: [
-                {
-                    icon: "icon-user",
-                    title: "我的"
-                },
                 {
                     icon: "icon-nav",
                     title: "导航"
@@ -38,12 +41,26 @@ export default {
             ]
         };
     },
-    components: {
-        list
-    },
     methods: {
         tab() {
-            console.log(12);
+            this.isShow = !this.isShow;
+        },
+        user() {
+            this.$router.push({ path: "/home" });
+        },
+        logout() {
+            // token 清空
+            sessionStorage.token = "";
+            setTimeout(() => {
+                this.$router.push({ path: "/" });
+                // 同时修改 authorize的值为默认的 null
+                this.$store.commit("LOGIN", {
+                    authorize: null
+                });
+            }, 1000);
+        },
+        tabs(url) {
+            this.$router.push({ path: url });
             this.isShow = !this.isShow;
         }
     }
@@ -56,6 +73,7 @@ export default {
     height: rem(60);
     background: #fff;
     position: relative;
+    overflow: auto;
 
     img {
         float: left;
@@ -65,25 +83,111 @@ export default {
 
     .nav-icon {
         float: right;
-        width: 30%;
+        width: 26%;
         display: flex;
         text-align: center;
         justify-content: space-around;
+
+        .icon-user {
+            border: none;
+            font-size: rem(24);
+            background: none;
+        }
 
         figure {
             margin: rem(10) 0;
         }
     }
+}
+
+.navs {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    height: rem(250);
+    position: absolute;
+    top: 0px;
+    left: 0;
+    z-index: 1;
+    color: #fff;
+
+    .cuo {
+        display: inline-block;
+        font-size: rem(40);
+        font-weight: bold;
+        width: rem(50);
+        line-height: rem(30);
+        text-align: right;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
 
     nav {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 3;
-    }
+        width: 100%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        flex-flow: wrap;
+        font-size: rem(14);
+        margin: rem(20) 0;
 
-    &.cur {
-        display: block;
+        figure {
+            flex: 20%;
+            margin: rem(5px) rem(5);
+
+            p.iconfont {
+                width: 75%;
+                height: rem(60);
+                margin: rem(5px) auto;
+                border-radius: 50%;
+                background: red;
+                line-height: rem(60);
+                color: #fff;
+                font-size: rem(30px);
+
+                &.icon-case {
+                    background: #39c894;
+                }
+
+                &.icon-pics {
+                    background: #feb505;
+                }
+
+                &.icon-designer {
+                    background: #eed215;
+                }
+
+                &.icon-construction-site {
+                    background: #00b2b2;
+                }
+
+                &.icon-loans {
+                    background: #1b9af7;
+                }
+
+                &.icon-loans {
+                    background: #7b72e9;
+                }
+
+                &.icon-pencle {
+                    background: #ff4351;
+                }
+
+                &.icon-ten {
+                    background: #fe8864;
+                }
+            }
+        }
     }
+}
+
+.list {
+    width: 100%;
+    background: red;
+    position: relative;
+    top: -60px;
+    left: 0;
+    z-index: 1;
+    height: 90px;
 }
 </style>

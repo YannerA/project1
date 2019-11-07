@@ -17,8 +17,38 @@ Vue.use(VueAwesomeSwiper, /* { default global options } */)
 Vue.use(ElementUI);
 Vue.use(Vant);
 Vue.use(directives)
+// 图片懒加载组件
+import { Lazyload } from 'vant';
+
+// options 为可选参数，无则不传
+Vue.use(Lazyload);
+
+// 全局导航钩子
+router.beforeEach((to, from, next) => {
+  if(to.meta.isLogin){
+    if(sessionStorage.token){
+     next()
+    }else{
+      alert('需要登陆')
+      next('/login')
+    }
+  }else{
+    next()
+  }
 
 
+  // 如果登陆以后 不能进到login页面
+  if(to.fullPath == '/login'){
+    if(sessionStorage.token){
+      next({
+        // 从哪来的回哪去
+        path: from.fullPath
+      })
+    }else{
+      next()
+    }
+  }
+})
 
 Vue.config.productionTip = false
 
